@@ -1,0 +1,8 @@
+{% extends 'layout/default.html.twig' %}
+
+{% set user = app.user %}
+{% block body %}
+	<div class="container mt-3">
+		<h2>Profil {{ user.firstname }}</h2>
+	</div>
+{% endblock %}

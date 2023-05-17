@@ -1,0 +1,25 @@
+{% extends 'layout/default.html.twig' %}
+{% dump(cart) %}
+{% block body %}
+	<div class="container mt-4">
+		<table class="table">
+			<thead>
+			<tr>
+				<th scope="col">Id</th>
+				<th scope="col">Produit</th>
+				<th scope="col">Prix</th>
+			</tr>
+			</thead>
+			<tbody>
+			{% for product in cart.products %}
+				<tr>
+					<th scope="row">{{ product.id }}</th>
+					<td>{{ product.name }}</td>
+					<td>€ {{ product.price }}</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}
+

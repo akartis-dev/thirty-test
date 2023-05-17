@@ -1,0 +1,44 @@
+{% extends 'layout/default.html.twig' %}
+
+{% block body %}
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="product-images">
+					<div class="product-main-img">
+						<img src="https://fakeimg.pl/750x750" alt="" class="img-fluid">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-6">
+				<div class="product-inner">
+					<h2 class="product-name">{{ product.name }}</h2>
+					<div class="product-inner-price">
+						<ins>€ {{ product.price }}</ins>
+					</div>
+
+					{% if app.user %}
+						<form action="" method="post" class="cart">
+							<button class="add_to_cart_button" type="submit">Ajouter au panier</button>
+						</form>
+					{% endif %}
+
+					<div class="product-inner-category">
+						<p>Category: <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a
+									href="">sale</a>,
+							<a href="">shoes</a>. </p>
+					</div>
+
+					<h4>Description</h4>
+					<p>{{ product.description }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block title %}
+	{{ product.name }}
+{% endblock %}
+

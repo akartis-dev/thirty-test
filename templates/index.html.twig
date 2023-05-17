@@ -1,0 +1,17 @@
+{% extends "layout/default.html.twig" %}
+
+{% block body %}
+	{{ include('elements/_slider.html.twig') }}
+	<div class="container">
+		<div class="row">
+			{% for product in products %}
+				<div class="col-lg-3 mb-3">
+					{{ include('elements/_product.html.twig', {product: product}) }}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+
+
+{% endblock %}

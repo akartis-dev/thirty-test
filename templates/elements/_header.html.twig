@@ -1,0 +1,32 @@
+<div class="header-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="user-menu">
+					<ul>
+						<li><a href="{{ path('app_login') }}"><i class="fa fa-user"></i> Login</a></li>
+						{% if app.user %}
+							<li><a href="{{ path('app_logout') }}"><i class="fa fa-user"></i> Logout</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> <!-- End header area -->
+
+<div class="site-branding-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="logo">
+					<h1><a href="./"><img src="/img/logo.png"></a></h1>
+				</div>
+			</div>
+
+			{% if app.user %}
+				{{ render(controller('App\\Controller\\WidgetController::cartHeader')) }}
+			{% endif %}
+		</div>
+	</div>
+</div> <!-- End site branding area -->

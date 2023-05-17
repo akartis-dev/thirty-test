@@ -1,0 +1,15 @@
+<div class="single-product">
+	<div class="product-f-image">
+		<img src="https://fakeimg.pl/250x250" alt="" class="img-fluid">
+	</div>
+
+	<h2><a href="single-product.html">{{ product.name }}</a></h2>
+
+	<div class="product-carousel-price">
+		<ins>€ {{ product.price }}</ins>
+	</div>
+
+	<div>
+		<a href="{{ path('app_product', {id: product.id}) }}" class="btn btn-dark">Voir la fiche</a>
+	</div>
+</div>
